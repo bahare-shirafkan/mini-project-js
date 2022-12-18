@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Row</title>
+</head>
+
+<body>
+    <table id="table">
+        <thead>
+            <td>Name</td>
+        </thead>
+        <tr id="row">
+            <td><input type="text"></td>
+        </tr>
+    </table>
+    <button type="button" id="btnAddRow">Add Row</button>
+    <input type="text" id="count" placeholder="How many rows do you want to add?">
+</body>
+<script src="https://code.jquery.com/jquery-3.6.2.min.js"
+    integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous">
+</script>
+<script>
+    $(document).ready(function () {
+        $("#btnAddRow").click(function () {
+            let count=$('#count').val();
+            let row = $("#row");
+            while (count-- > 0) row.clone().appendTo("#table");
+        });
+    });
+</script>
+
+</html>
